@@ -14,6 +14,9 @@ export const Card = props => {
 				<h5 className="card-title">{props.var1}</h5>
 				<p className="card-text">{props.var2}</p>
 				<p className="card-text">{props.var3}</p>
+				<Link to={"/details/" + props.id}>
+					<button className="btn btn-primary">Learn More</button>
+				</Link>
 			</div>
 		</div>
 	);
@@ -22,5 +25,6 @@ export const Card = props => {
 Card.propTypes = {
 	var1: PropTypes.string,
 	var2: PropTypes.string,
-	var3: PropTypes.strings
+	var3: PropTypes.strings,
+	id: PropTypes.number
 };
