@@ -25,6 +25,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ people: data.results });
 					});
 			},
+			loadDataPlanets: () => {
+				fetch("https://swapi.dev/api/planets/")
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						setStore({ planets: data.results });
+					});
+			},
 
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
